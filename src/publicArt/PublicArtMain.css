@@ -1,0 +1,7 @@
+.title {
+  font-size: 30px;
+  font-weight: bold; /* 텍스트 굵기 */
+  color: #000000; /* 텍스트 색상 */
+  padding: 20px; /* 상하좌우 여백 */
+  margin-bottom: 8px; /* 하단 여백 */
+}
