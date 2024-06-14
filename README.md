@@ -1,70 +1,61 @@
-# Getting Started with Create React App
+# React Project 생성
+1. Node.js 설치 : https://nodejs.org/
+2. npx create-react-app my-app 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# tailwind css 설치
+1. npm install -D tailwindcss
+2. Tailwind CSS 설정 파일 생성 
+   - npx tailwindcss init
+3. tailwind.config.js 파일 수정
+   ```
+   /** @type {import('tailwindcss').Config} */
+   module.exports = {
+   content: ["./src/**/*.{js,jsx,ts,tsx}"],
+   theme: {
+      extend: {},
+   },
+   plugins: [],
+   }
+   ```
+4. index.css 추가
+   ```
+   @tailwind base;
+   @tailwind components;
+   @tailwind utilities;
+   ```
+# React Icon
+   - npm install react-icons --save
+   - https://react-icons.github.io/react-icons/
 
-## Available Scripts
+# React Route
+   - npm install react-router-dom
 
-In the project directory, you can run:
+# Recoil 설치
+   - npm install recoil
 
-### `npm start`
+# 환경변수 설정
+1. .env 만들기
+   - .env 파일은 **최상위 루트**에 작성
+   - 환경변수명은 반드시 REACT_APP_으로 시작
+2. .env 파일 gitIgnore에 .env를 추가
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# RESTful 테스팅
+1. 설치 
+   - npm install -g json-server
+2. 실행 
+   - npx json-server --watch db.json --port 3005 
+3. RESTful(Representational State Transfer)
+   - 주로 HTTP 프로토콜을 사용하며, 웹 상에서 클라이언트와 서버 간의 통신을 단순하고 효율적으로 구현
+    - RESTful API
+       - RESTful 아키텍처 스타일을 따르는 웹 API
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+    - HTTP 메서드와 CRUD 연산 매핑
+       - GET: 자원의 표현을 요청  (읽기)
+       - POST: 새로운 자원을 생성  (생성)
+       - PUT: 기존 자원을 업데이트  (갱신)
+       - DELETE: 자원을 삭제  (삭제)
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# VS code Extention
+- VS Code ES7 React/Redux/React-Native/JS snippets
+- Tailwind CSS IntelliSense"# project" 
