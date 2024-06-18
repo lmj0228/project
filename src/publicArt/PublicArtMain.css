@@ -5,3 +5,22 @@
   padding: 20px; /* 상하좌우 여백 */
   margin-bottom: 8px; /* 하단 여백 */
 }
+
+.button-style {
+  font-size: 0.875rem; /* text-sm */
+  margin-right: 0.5rem; /* mr-2 */
+  margin-bottom: 0.5rem; /* mb-2 */
+  padding: 0.5rem 1rem; /* px-4 py-2 */
+  background-color: #ffffff; /* hover:bg-sky-300 */
+  color: #000; /* text-black */
+  font-weight: 600; /* font-semibold */
+  border-radius: 9999px; /* rounded-full */
+  border: 1px solid #CBD5E0; /* border border-gray-300 */
+}
+
+.button-style:hover,
+.button-style:focus {
+  background-color: #28b3fd; /* hover:bg-sky-300 */
+  color: #fff; /* text-black */
+}
+

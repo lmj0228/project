@@ -1,12 +1,11 @@
 import './Info.css';
 import square from '../images/square.png';
 import workFlow from '../images/workFlow.png';
-import frame2 from '../images/frame2.png';
 
 export default function Info() {
   return (
-    <div className='w-full'>
-      <br /><br /><br />
+    <div className='w-9/12'>
+      <div className='box'></div>
       <h2 className="title1">
         <img src={square} alt="square" className='square' />
         <span>공공조형물 이란?</span>
@@ -38,15 +37,10 @@ export default function Info() {
         <span>업무흐름도 (시유지에 건립시)</span>
       </h2>
       <div className="container">
-      <img src={frame2} alt="frame2" className='workFlow'/>
-      </div>
-      <br /><br /><br />
-
-      <div className="container">
       <img src={workFlow} alt="workFlow" className='workFlow'/>
       </div>
       <br /><br /><br />
-
+      
       <div className="w-full flex justify-center items-center">
         <a href="https://www.busan.go.kr/depart/culture030302"
           title="새 창" target="_blank" className="linkBtn" rel="noreferrer">

@@ -45,11 +45,12 @@ export default function PublicArt() {
     if (!tdata.length || selectedGu === "all") {
       // 전체 카드 초기 표시
       let tm = tdata.map(item =>
-        <PublicArtCard key={item.artId}
+        <PublicArtCard id={item.artId}
           imgUrl={item.imgSrc}
           title={item.title}
-          ptitle={item.purpose.replace(/[^0-9a-zA-Z가-힣\[\]\(\),\s]/g, '').replace(/BR/g, '')}
-          ktag={item.areaCode} />
+          ptitle={item.purpose.replace(/[^0-9a-zA-Z가-힣[\]()\s]/g, '').replace(/BR/g, '')}
+          ktag={item.areaCode}
+          items = {item}/>
       );
       setCardTags(tm);
     } else {
@@ -58,7 +59,7 @@ export default function PublicArt() {
           <PublicArtCard key={item.artId}
             imgUrl={item.imgSrc}
             title={item.title}
-            ptitle={item.purpose.replace(/[^0-9a-zA-Z가-힣\[\]\(\),\s]/g, '').replace(/BR/g, '')}
+            ptitle={item.purpose.replace(/[^0-9a-zA-Z가-힣[\]()\s]/g, '').replace(/BR/g, '')}
             ktag={item.areaCode} />
         );
       setCardTags(tm);
@@ -78,8 +79,7 @@ export default function PublicArt() {
       <button
         key="all"
         onClick={() => handleSelectGu("all")}
-        className={`text-sm mr-2 mb-2 px-4 py-2 hover:bg-sky-300 focus:outline-none 
-                  text-black font-semibold rounded-full border border-gray-300`}
+        className={`button-style`}
       >
         #전체
       </button>
@@ -89,8 +89,7 @@ export default function PublicArt() {
       <button
         key={item}
         onClick={() => handleSelectGu(item)}
-        className={`text-sm mr-2 mb-2 px-4 py-2 hover:bg-sky-300 focus:outline-none 
-                  text-black font-semibold rounded-full border border-gray-300`}
+        className={`button-style`}
       >
         #{item}
       </button>
@@ -112,7 +111,9 @@ export default function PublicArt() {
   useEffect(() => {
     if (!tdata.length) return;
     const filteredData = tdata.filter(item => item.artId !== "12");
-    setTdata(filteredData);
+    if (filteredData.length !== tdata.length) {
+        setTdata(filteredData);
+    }
   }, [tdata]);
 
   return (
