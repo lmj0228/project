@@ -47,19 +47,24 @@ function Login() {
   return (
     <div className="Login">
       <h1>로그인</h1>
+
       <form onSubmit={handleSubmit}>
+
         <div className="form-group">
           <label>아이디</label>
           <input type="text" name="username" value={formData.username} onChange={handleChange} />
           {errors.username && <p className="error">{errors.username}</p>}
         </div>
+
         <div className="form-group">
           <label>비밀번호</label>
           <input type="password" name="password" value={formData.password} onChange={handleChange} />
           {errors.password && <p className="error">{errors.password}</p>}
         </div>
+
         <button type="submit">로그인</button>
       </form>
+      
     </div>
   );
 }

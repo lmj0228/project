@@ -2,10 +2,9 @@
   width: 100%;
   max-width: 1400px;
   padding: 30px;
-  border: 2px dashed #a2dbfa; /* 모든 면의 테두리를 점선으로 설정 */
+  border: 2px dashed #a2dbfa; 
   border-radius: 8px;
   position: relative; /* 부모 요소를 기준으로 위치 설정 */
-  
 }
 
 @media (max-width: 1800px) {
@@ -41,7 +40,6 @@
 
 p {
   font-size: 15px;
-  font-weight: bold;
  }
 
 .square {
@@ -52,10 +50,10 @@ p {
 
 .workFlow {
   display: block;
-  margin-left: auto; /* 좌측 여백 자동 조절 */
-  margin-right: auto; /* 우측 여백 자동 조절 */
-  width: 70%; /* 이미지가 부모 요소 내에서 최대 100%까지 확장 */
-  height: auto; /* 이미지의 비율을 유지 */
+  margin-left: auto; 
+  margin-right: auto; 
+  width: 80%; 
+  height: auto; 
 }
 
 .box {

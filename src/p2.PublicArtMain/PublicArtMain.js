@@ -1,4 +1,4 @@
-import { useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 import PublicArtCard from './PublicArtCard';
 import './PublicArtMain.css';
 
@@ -7,7 +7,7 @@ export default function PublicArt() {
   const [tdata, setTdata] = useState([]);
   const [guname, setGuname] = useState([]);
   const [opTags, setOpTags] = useState([]);
-  const [selectedGu, setSelectedGu] = useState("all"); // 선택된 구
+  const [selectedGu, setSelectedGu] = useState("강서구");
   const [cardTags, setCardTags] = useState([]);
 
   // 실제 fetch
@@ -42,25 +42,31 @@ export default function PublicArt() {
 
   // 선택된 구의 카드 표시
   useEffect(() => {
-    if (!tdata.length || selectedGu === "all") {
+    if (!tdata.length || selectedGu === "") {
+      // 선택된 구가 없을 때 카드 표시하지 않음
+      setCardTags([]);
+
+    } else if (selectedGu === "all") {
       // 전체 카드 초기 표시
       let tm = tdata.map(item =>
-        <PublicArtCard id={item.artId}
-          imgUrl={item.imgSrc}
+        <PublicArtCard artId={item.artId}
+          imgSrc={item.imgSrc}
           title={item.title}
-          ptitle={item.purpose.replace(/[^0-9a-zA-Z가-힣[\]()\s]/g, '').replace(/BR/g, '')}
-          ktag={item.areaCode}
-          items = {item}/>
+          purpose={item.purpose.replace(/[^0-9a-zA-Z가-힣[\]()\s]/g, '').replace(/BR/g, '')}
+          areaCode={item.areaCode}
+          items={item} />
       );
       setCardTags(tm);
+
     } else {
       let tm = tdata.filter(item => item.codeName === selectedGu)
         .map(item =>
-          <PublicArtCard key={item.artId}
-            imgUrl={item.imgSrc}
+          <PublicArtCard artId={item.artId}
+            imgSrc={item.imgSrc}
             title={item.title}
-            ptitle={item.purpose.replace(/[^0-9a-zA-Z가-힣[\]()\s]/g, '').replace(/BR/g, '')}
-            ktag={item.areaCode} />
+            purpose={item.purpose.replace(/[^0-9a-zA-Z가-힣[\]()\s]/g, '').replace(/BR/g, '')}
+            areaCode={item.areaCode}
+            items={item} />
         );
       setCardTags(tm);
     }
@@ -75,27 +81,25 @@ export default function PublicArt() {
   useEffect(() => {
     if (!guname.length) return;
 
-    const allButton = (
-      <button
-        key="all"
-        onClick={() => handleSelectGu("all")}
-        className={`button-style`}
-      >
-        #전체
-      </button>
-    );
-
     const guButtons = guname.map(item => (
       <button
         key={item}
         onClick={() => handleSelectGu(item)}
-        className={`button-style`}
-      >
+        className={`button-style ${selectedGu === item ? "selected" : ""}`}>
         #{item}
       </button>
     ));
 
-    const allButtons = [allButton, ...guButtons];
+    const allButton = (
+      <button
+        key="all"
+        onClick={() => handleSelectGu("all")}
+        className={`button-style ${selectedGu === "all" ? "selected" : ""}`}>
+        #전체
+      </button>
+    );
+
+    const allButtons = [...guButtons, allButton];
 
     const dividedTags = [];
     const chunkSize = 8;
@@ -104,25 +108,26 @@ export default function PublicArt() {
     }
 
     setOpTags(dividedTags);
-
-  }, [guname]);
+  }, [guname, selectedGu]);
 
   // 데이터 중 "artId"가 "12"인 항목 필터링하여 제거
   useEffect(() => {
     if (!tdata.length) return;
     const filteredData = tdata.filter(item => item.artId !== "12");
     if (filteredData.length !== tdata.length) {
-        setTdata(filteredData);
+      setTdata(filteredData);
     }
   }, [tdata]);
 
   return (
-    <div className="w-full h-full flex flex-col justify-center items-center">
+    <div className="w-7/12 h-full flex flex-col justify-center items-center">
+
       <br /><br />
       <label htmlFor="gu" className="title">
         부산광역시 공공조형물 정보
       </label>
       <br /><br />
+
       <div className="flex flex-wrap w-2/3 justify-center items-center">
         {opTags.map((chunk, index) => (
           <div key={index} className="flex flex-wrap justify-center">
@@ -132,12 +137,12 @@ export default function PublicArt() {
       </div>
       <br /><br />
 
-      <div className="w-full flex justify-center">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-2 gap-2">
-          {cardTags}
-        </div>
+      <div className="card-view w-full grid gap-4 grid-cols-1">
+            {cardTags}
       </div>
+      <br /><br />
 
     </div>
   );
-}
+};
+
