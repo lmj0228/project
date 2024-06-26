@@ -5,13 +5,13 @@
   align-items: center;
 }
 
-form {
+.form1 {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   max-width: 600px;
   margin: auto;
-  padding: 1em;
+  padding: 20px;
   border: 1px solid #ccc;
   border-radius: 1em;
 }
@@ -22,16 +22,25 @@ form {
   margin-bottom: 1em;
 }
 
+.form-group2 {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1em;
+  margin-right: 83px;
+}
+
 .form-group label {
   font-size: 12px;
   width: 120px;
   margin-right: 1em;
-  text-align: right;
 }
 
-.gender {
-  margin-left: 9.5px;
+.form-group2 label {
+  font-size: 12px;
+  width: 120px;
+  margin-right: 15px;
 }
+
 
 input[type="text"],
 input[type="password"],

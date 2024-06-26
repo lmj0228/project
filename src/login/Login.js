@@ -46,9 +46,9 @@ function Login() {
 
   return (
     <div className="Login">
-      <h1>로그인</h1>
+      <h1>로그인</h1><br/>
 
-      <form onSubmit={handleSubmit}>
+      <form className='form2' onSubmit={handleSubmit}>
 
         <div className="form-group">
           <label>아이디</label>
@@ -63,6 +63,7 @@ function Login() {
         </div>
 
         <button type="submit">로그인</button>
+        
       </form>
       
     </div>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import Modal from '../components/Modal';
+import Kakao from '../components/Kakao';
 import './PublicArtDetail.css';
 
 export default function PublicArtDetail() {
@@ -23,6 +24,7 @@ export default function PublicArtDetail() {
     setShowModal(false);
   };
 
+ 
   return (
     <div className='w-7/12 flex flex-col justify-center items-center'>
       <div className='spacing'></div>
@@ -46,14 +48,18 @@ export default function PublicArtDetail() {
         </div>
 
         <div className='box2 flex-col'>
-          <div className='map'>지도</div>
+          <Kakao addr1={addr1} />
           <p className='address'>주소 : {addr1}, {addr2}</p>
         </div>
 
       </div>
 
       <div className='spacing'></div>
-      <div className='review'>리뷰</div>
+
+      <div className='confirmation'>
+        <h2>방문 인증하기</h2>
+      </div>
+
       <div className='spacing'></div>
 
       <Modal show={showModal} onClose={handleCloseModal}>

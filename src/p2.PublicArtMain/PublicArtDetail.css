@@ -14,7 +14,7 @@
   align-items: center; /* 내용 세로 가운데 정렬 */
 }
 
-.review {
+.confirmation {
   border: solid 1px rgb(196, 196, 196); /* 테두리 스타일 및 색상 설정 */
   width: 100%;
   max-width: 1000px;
@@ -109,6 +109,47 @@ p {
   align-items: flex-start;  
   border: 2px dashed #a2dbfa; 
   padding: 20px; /* 내부 여백 설정 */
+  border-radius: 5px;
+}
+
+.review {
+  width: 100%;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  margin-top: 20px;
+}
+
+.review h2 {
+  margin-bottom: 10px;
+  font-size: 1.5em;
+}
+
+.review-item {
+  margin-bottom: 10px;
+}
+
+.review-item p {
+  margin: 5px 0;
+}
+
+.review-item hr {
+  margin-top: 10px;
+  border: none;
+  border-top: 1px solid #ddd;
+}
+
+.review-list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.review-item {
+  flex: 1 1 30%; /* Adjust as needed for the layout */
+  margin: 10px;
+  border: 1px solid #ccc;
+  padding: 10px;
   border-radius: 5px;
 }
 

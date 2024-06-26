@@ -5,13 +5,13 @@
   align-items: center;
 }
 
-form {
+.form2 {
   display: flex;
   flex-direction: column;
   align-items: center;
   max-width: 600px;
   margin: auto;
-  padding: 1em;
+  padding: 20px;
   border: 1px solid #ccc;
   border-radius: 1em;
 }
@@ -25,7 +25,12 @@ form {
 .form-group label {
   width: 120px;
   margin-right: 1em;
-  text-align: right;
+  text-align: center;
+}
+
+.form-group input {
+  margin-right: 1em;
+  text-align: center;
 }
 
 button[type="submit"] {

@@ -49,7 +49,9 @@ export default function PublicArt() {
     } else if (selectedGu === "all") {
       // 전체 카드 초기 표시
       let tm = tdata.map(item =>
-        <PublicArtCard artId={item.artId}
+        <PublicArtCard
+          key={item.artId}  // key prop 추가
+          artId={item.artId}
           imgSrc={item.imgSrc}
           title={item.title}
           purpose={item.purpose.replace(/[^0-9a-zA-Z가-힣[\]()\s]/g, '').replace(/BR/g, '')}
@@ -61,7 +63,9 @@ export default function PublicArt() {
     } else {
       let tm = tdata.filter(item => item.codeName === selectedGu)
         .map(item =>
-          <PublicArtCard artId={item.artId}
+          <PublicArtCard
+            key={item.artId}  // key prop 추가
+            artId={item.artId}
             imgSrc={item.imgSrc}
             title={item.title}
             purpose={item.purpose.replace(/[^0-9a-zA-Z가-힣[\]()\s]/g, '').replace(/BR/g, '')}
@@ -138,7 +142,7 @@ export default function PublicArt() {
       <br /><br />
 
       <div className="card-view w-full grid gap-4 grid-cols-1">
-            {cardTags}
+        {cardTags}
       </div>
       <br /><br />
 

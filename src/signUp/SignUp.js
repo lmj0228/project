@@ -72,8 +72,8 @@ function SignUp() {
 
   return (
     <div className="SignUp">
-      <h1>회원가입</h1>
-      <form onSubmit={handleSubmit}>
+      <h1>회원가입</h1><br />
+      <form className='form1' onSubmit={handleSubmit}>
         <div className="form-group">
           <label>아이디</label>
           <input type="text" name="username" value={formData.username} onChange={handleChange} />
@@ -94,7 +94,7 @@ function SignUp() {
           <input type="text" name="name" value={formData.name} onChange={handleChange} />
           {errors.name && <p className="error">{errors.name}</p>}
         </div>
-        <div className="form-group">
+        <div className="form-group2">
           <label className="gender">성별</label>
           <select name="gender" value={formData.gender} onChange={handleChange}>
             <option value="">선택하세요</option>
